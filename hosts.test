@@ -1,0 +1,9 @@
+# webserver
+172.0.0.1	localhost
+172.0.0.1	app.test.e4-cash.net  app.test
+# app-users
+10.132.148.73	taris.priv.e4-cash.net	taris.priv 	app.users.priv.e4-cash.net app.users.priv
+# app-core 
+10.132.148.63	korean.priv.e4-cash.net	korean.priv 	app.core.priv.e4-cash.net app.core.priv
+# database server
+10.132.148.75	endor.priv.e4-cash.net 	endor.priv 	db.priv.e4-cash.net		db.priv
