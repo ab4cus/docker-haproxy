@@ -1,0 +1,1 @@
+docker kill -s HUP web-haproxy

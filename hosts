@@ -1,9 +1,0 @@
-# webserver
-172.0.0.1	localhost
-172.0.0.1	app.test.e4cash.local  app.test
-# app-users
-172.0.0.1	taris.priv.e4cash.local	taris.priv 	app.users.priv.e4cash.local app.users.priv
-# app-core 
-172.0.0.1	korean.priv.e4cash.local	korean.priv 	app.core.priv.e4cash.local app.core.priv
-# database server
-172.0.0.1	endor.priv.e4cash.local 	endor.priv 	db.priv.e4cash.local		db.priv
