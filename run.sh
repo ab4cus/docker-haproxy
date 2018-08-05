@@ -25,7 +25,6 @@ docker run --name=web-haproxy \
 # Testing
 #docker run  --name=web-haproxy \
 #	-m 1.5GB \
-#	--network-alias=haproxy \
 #	--hostname=app.e4cash.local \
 #	--add-host=app.core.priv.e4-cash.net:10.132.148.63 \
 #	-p 80:80 \

@@ -43,7 +43,10 @@ RUN apt-get update \
 
 RUN mkdir -p /run/haproxy/
 
-COPY haproxy.cfg /etc/haproxy/haproxy.cfg
+COPY haproxy.cfg.prod /etc/haproxy/
+COPY haproxy.cfg.dev /etc/haproxy/
+COPY haproxy.cfg.test /etc/haproxy/
+RUN cp haproxy.cfg.prod haproxy.cfg
 
 ENV PATH=/opt/java/bin:$PATH
 
