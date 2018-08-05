@@ -5,15 +5,13 @@
 # Local
 docker run --name=web-haproxy \
 	-m 512MB \
-	-it \
 	--hostname=app.e4cash.local \
 	-p 80:80 \
 	-p 443:443 \
 	-p 81:81 \
 	-p 82:82 \
 	-p 90:90 \
-	-d e4cash/haproxy-1.8.13:latest \
-	bash
+	-d e4cash/haproxy-1.8.13:latest 
 
 # test configuration
 #docker run -it --rm --name haproxy-syntax-check e4cash/haproxy-1.8.13:latest haproxy -c -f /opt/haproxy/haproxy.cfg

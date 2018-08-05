@@ -82,7 +82,62 @@ frontend app-test.e4cash.net-http
 
   default_backend BACKEND_app
 
+#frontend app.e4-cash.net-https
+#  bind *:9990 accept-proxy
+#  log /dev/log local2 info
+#  option httplog
+  # Redirect to somewhere else if the domain is different
+#  acl HOST_app  hdr(host) -i app-test.e4cash.net
+#  redirect location https://www.e4cash.com/ code 301 if !HOST_app
+
+#  default_backend BACKEND-ADM_app
+
 backend BACKEND_app
+#  balance roundrobin
 #  server app core-priv.e4cash.net:8080 check
   server app core-test.e4cash.net:8080 check
 
+#backend BACKEND_app
+  #balance roundrobin
+  #server <server1 name> <private IP 1>:80 check
+  #server <server2 name> <private IP 2>:80 check
+#  server app.core app.core.priv.e4-cash.net:80 check
+
+#backend BACKEND-ADM_app
+#  server app.core core-priv.e4cash.net:9990
+
+#frontend http-in
+#   bind *:80
+#   option forwardfor
+#   acl is_site1 hdr_end(host) -i domain1.se
+#   acl is_site2 hdr_end(host) -i domain2.com
+
+#   use_backend site1 if is_site1
+#   use_backend site2 if is_site2
+#   default_backend webservers
+
+#backend webservers
+#   balance roundrobin
+#   server webserver1 Your-Webserver1-IP:80 check
+#   server webserver2 Your-Webserver2-IP:80 check
+#   option httpchk
+
+#backend webservers
+#   balance roundrobin
+#   server webserver1 Your-Webserver1-IP:80
+#   server webserver2 Your-Webserver2-IP:80
+#   server webserver1 Your-Webserver1-IP:80 check
+#   server webserver2 Your-Webserver2-IP:80 check
+#   option httpchk
+
+#backend site1
+#    balance roundrobin
+#    option httpclose
+#    option forwardfor
+#    server s2 127.0.0.1:49153 maxconn 32
+
+#backend site2
+#    balance roundrobin
+#    option httpclose
+#    option forwardfor
+#    server s1 127.0.0.1:2082 maxconn 32
